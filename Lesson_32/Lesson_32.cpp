@@ -303,7 +303,7 @@ public:
 
 	
 
-	unsigned int IndexOf(int value) {
+	unsigned int IndexOf(T value) {
 		for (unsigned int i = 0; i < size; i++)
 		{
 			if (this->data[i] == value) {
@@ -332,7 +332,7 @@ public:
 		return temp;
 	}
 
-	int GetElementAt(int index) {
+	T GetElementAt(unsigned int index) {
 		if (index > 0 && index <= size) {
 			return data[index];
 		}
@@ -348,6 +348,9 @@ public:
 	}
 
 };
+
+// ostream& operator << (ostream& os, const Vector& student);
+// istream& operator >> (istream& is, Vector& student);
 
 int main() {
 	setlocale(0, "");
@@ -366,9 +369,12 @@ int main() {
 	// a.operator= (a); // <<< для компилятора происходит следующий вызов
 	// Student::operator=(&a, a);
 
+	/*
 	while (true) {
 		a = b;
 	}
+	*/
+	
 
 	// проблема: дефолтовая перегрузка = скопирует значение указателя из оригинала в копию, получится 2 указателя на одну и ту же память, в итоге первый деструктор сработает как надо, а вот уже второй - попытается ПОВТОРНО очистить память, которой уже нет
 	// что делать?
