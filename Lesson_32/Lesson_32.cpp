@@ -224,6 +224,15 @@ public:
 		// this->capacity = original.capacity;
 	}
 
+	/// <summary>
+	/// Returns copy of data at index value.
+	/// </summary>
+	/// <param name="index">Index from which data copy will return.</param>
+	/// <returns>Data value copy from index.</returns>
+	T operator [] (unsigned int index) {
+		return data[index];
+	}
+
 	Vector& operator = (/*const Vector* this, */const Vector& original) {
 		if (this == &original) {
 			return *this;
