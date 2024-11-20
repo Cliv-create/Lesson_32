@@ -182,7 +182,7 @@ class Vector {
 				temp[i] = data[i];
 			}
 			*/
-			memcpy_s(temp, sizeof(temp), data, size * _msize(temp));
+			memcpy_s(temp, _msize(temp), data, size * _msize(temp));
 			delete[] data;
 			data = temp;
 		}
@@ -282,7 +282,7 @@ public:
 			temp[i] = data[i];
 		}
 		*/
-		memcpy_s(temp, sizeof(temp), data, size * _msize(temp));
+		memcpy_s(temp, _msize(temp), data, size * _msize(temp));
 		delete[] data;
 		data = temp;
 	}
