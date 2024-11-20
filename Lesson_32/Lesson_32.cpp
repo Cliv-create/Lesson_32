@@ -314,7 +314,7 @@ public:
 
 	
 
-	unsigned int IndexOf(T value) {
+	int IndexOf(T value) {
 		for (unsigned int i = 0; i < size; i++)
 		{
 			if (this->data[i] == value) {
@@ -324,7 +324,7 @@ public:
 		return -1;
 	}
 
-	unsigned int LastIndexOf(T value) {
+	int LastIndexOf(T value) {
 		for (int i = size - 1; i >= 0; i--)
 		{
 			if (this->data[i] == value) {
