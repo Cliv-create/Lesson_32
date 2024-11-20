@@ -263,6 +263,17 @@ public:
 		size--;
 	}
 
+	void PopFront(T value)
+	{
+		EnsureCapacity();
+		for (int i = size; i > 0; i--) // i = 1
+		{
+			data[i] = data[i - 1]; // data[1] = data[0]
+		}
+		// data[0] = value; // First element will stay clear.
+		size--;
+	}
+
 	void TrimToSize() {
 		capacity = size;
 		T* temp = new T[capacity];
@@ -323,6 +334,7 @@ public:
 		return -1;
 	}
 
+	// Clone function
 	Vector<T> GetVector() const {
 		Vector<T> temp;
 		for (int i = 0; i < size; i++)
