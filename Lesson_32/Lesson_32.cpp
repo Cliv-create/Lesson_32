@@ -260,7 +260,9 @@ public:
 	}
 
 	void PopBack() {
-		size--;
+    	if (size > 0) {
+    	    --size; // уменьшаем размер, освобождаем последний элемент логически
+    	}
 	}
 
 	void PopFront(T value)
@@ -271,7 +273,9 @@ public:
 			data[i] = data[i - 1]; // data[1] = data[0]
 		}
 		// data[0] = value; // First element will stay clear.
-		size--;
+		if (size > 0) {
+			--size;
+		}
 	}
 
 	void TrimToSize() {
