@@ -361,8 +361,20 @@ public:
 
 };
 
-// ostream& operator << (ostream& os, const Vector& student);
-// istream& operator >> (istream& is, Vector& student);
+ostream& operator << (ostream& os, const Vector& student);
+istream& operator >> (istream& is, Vector& student);
+
+ostream& operator << (ostream% os, const Vector& original) {
+	original.Print();
+	return os;
+}
+
+/*
+istream& operator >> (istream& is, Vector& original) {
+
+}
+*/
+
 
 int main() {
 	setlocale(0, "");
